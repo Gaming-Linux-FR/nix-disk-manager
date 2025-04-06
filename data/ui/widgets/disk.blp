@@ -1,0 +1,29 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $NixDiskManagerDisk: Box {
+  styles ['card']
+  orientation: vertical;
+  spacing: 20;
+
+  Image {
+    margin-top: 30;
+    icon-size: large;
+    icon-name: 'drive-harddisk';
+  }
+
+  Label label {
+    styles ['heading']
+  }
+
+  Button {
+    styles ['pill', 'suggested-action']
+    Adw.ButtonContent {
+        icon-name: 'system-run-symbolic';
+        label: _("Manage");
+    }
+    margin-start: 20;
+    margin-end: 20;
+    margin-bottom: 30;
+  }
+}

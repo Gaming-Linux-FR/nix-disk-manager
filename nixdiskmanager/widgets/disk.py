@@ -8,6 +8,7 @@ from gi.repository import Gtk
 class NixDiskManagerDisk(Gtk.Box):
     __gtype_name__ = "NixDiskManagerDisk"
     label = Gtk.Template.Child('label')
+    manage_btn = Gtk.Template.Child('manage-btn')
 
     def __init__(self, disk, parent, window, **kwargs):
         super().__init__(**kwargs)
@@ -23,3 +24,9 @@ class NixDiskManagerDisk(Gtk.Box):
     def show_disk_dialog(self, window):
         dialog = NixDiskManagerManageDiskDialog(self.disk, window, self.parent)
         dialog.present(window)
+
+    def prevent_changes(self):
+        self.manage_btn.set_sensitive(False)
+
+    def allow_changes(self):
+        self.manage_btn.set_sensitive(True)

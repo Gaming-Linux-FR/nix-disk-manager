@@ -37,7 +37,7 @@ class NixDiskManagerApp(Adw.Application):
 
         if res == 0:
             self.must_save = False
-            self.disk_manager.prevent_save()
+            self.disk_manager.allow_changes()
         else:
             self.window.rebuild_error_banner.set_revealed(True)
 
@@ -48,6 +48,7 @@ class NixDiskManagerApp(Adw.Application):
 
         self.window.rebuild_error_banner.set_revealed(False)
         self.window.rebuild_banner.set_revealed(True)
+        self.disk_manager.prevent_changes()
 
         pool = Pool(max_workers=1)
         f = pool.submit(subprocess.call, self.nix_rebuild_cmd, shell=True)

@@ -16,7 +16,7 @@ def parse_nix_filesystems(nix_config) -> dict[str, Partition]:
         partition_path = os.path.abspath('/'.join(partition_uuid_path.split('/')[:-1]) + '/' + os.readlink(partition_uuid_path))
 
         if partition_path not in partitions_dict:
-            partitions_dict[partition_path] = Partition(partition_path, partition_uuid_path, [mount_point], None)
+            partitions_dict[partition_path] = Partition(partition_path, partition_uuid_path, [mount_point], None, None)
         else:
             partitions_dict[partition_path].mount_points.append(mount_point)
 
@@ -39,19 +39,26 @@ def get_disks(nix_config = None) -> list[Disk]:
 
     for disk_line in content:
         disk = '/dev/' + disk_line.split(' ')[-1].strip()
+        disk_size = int(subprocess.getoutput(f'lsblk -b --output SIZE -n -d {disk}'))
         
         if len(disks) > 0 and disk.startswith(disks[-1].path):
             blkid = subprocess.getoutput(f'blkid {disk}')
 
             partition_type = re.search('TYPE="([^"]+)"', blkid).group(1)
+            partition_label_match = re.search('LABEL="([^"]+)"', blkid)
+
+            partition_label = None if partition_label_match == None else partition_label_match.group(1)
+
             if disk in partitions:
                 partitions[disk].type = partition_type
+                partitions[disk].label = partition_label
+                partitions[disk].size = disk_size
                 disks[-1].partitions.append(partitions[disk])
             else:
-                disks[-1].partitions.append(Partition(disk, f'/dev/disk/by-uuid/{re.search('UUID="([^"]+)"', blkid).group(1)}', [], partition_type))
+                disks[-1].partitions.append(Partition(disk, f'/dev/disk/by-uuid/{re.search('UUID="([^"]+)"', blkid).group(1)}', [], partition_type, disk_size, partition_label))
             
             continue
         
-        disks.append(Disk(disk, []))
+        disks.append(Disk(disk, [], disk_size))
 
     return disks

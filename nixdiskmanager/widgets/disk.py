@@ -1,5 +1,6 @@
 from nixdiskmanager.constants import rootdir
 from nixdiskmanager.dialogs.manage_disk import NixDiskManagerManageDiskDialog
+from nixdiskmanager.utils.size_parser import parse_size
 
 from gi.repository import Gtk
 
@@ -13,7 +14,9 @@ class NixDiskManagerDisk(Gtk.Box):
 
         self.disk = disk
         self.parent = parent
-        self.label.set_label(self.disk.path)
+
+        self.label.set_label(f'{self.disk.path} ({parse_size(self.disk.size)})')
+
         self.window = window
 
     @Gtk.Template.Callback()

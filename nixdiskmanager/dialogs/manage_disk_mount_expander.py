@@ -1,5 +1,6 @@
 from nixdiskmanager.dialogs.manage_disk_mount_row import NixDiskManagerManageDiskMountRow
 from nixdiskmanager.dialogs.manage_disk_add_mount_row import NixDiskManagerManageDiskAddMountRow
+from nixdiskmanager.utils.size_parser import parse_size
 from nixdiskmanager.constants import rootdir
 
 import os
@@ -14,7 +15,7 @@ class NixDiskManagerManageDiskDialogMountExpander(Adw.ExpanderRow):
         super().__init__(**kwargs)
 
         self.app = app
-        self.set_title(partition.path + f' ({partition.type})')
+        self.set_title((partition.label + ' - ' if partition.label != None else '') + partition.path + f' ({partition.type}, {parse_size(partition.size)})')
         self.partition = partition
 
         for mount_point in partition.mount_points:

@@ -17,7 +17,6 @@ template $NixDiskManagerDisk: Box {
   }
 
   Button {
-    styles ['pill', 'suggested-action']
     Adw.ButtonContent {
         icon-name: 'system-run-symbolic';
         label: _("Manage");
@@ -25,5 +24,7 @@ template $NixDiskManagerDisk: Box {
     margin-start: 20;
     margin-end: 20;
     margin-bottom: 30;
+    clicked => $show_disk_dialog();
+    styles ['pill', 'suggested-action']
   }
 }

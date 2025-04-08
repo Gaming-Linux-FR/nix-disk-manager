@@ -1,0 +1,9 @@
+data/ui/window.blp
+data/ui/disk.blp
+data/ui/disks.blp
+data/ui/save_dialog.blp
+data/ui/manage_disk_add_mount_row.blp
+data/ui/manage_disk_mount_expander.blp
+data/ui/manage_disk_mount_row.blp
+data/ui/manage_disk.blp
+data/ui/welcome_dialog.blp

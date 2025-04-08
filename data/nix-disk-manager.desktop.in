@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Nix Disk Manager
+GenericName=Disk Manager
+X-GNOME-FullName=Nix Disk Manager
+Comment=Manage disks on NixOS
+Exec=pkexec /run/current-system/sw/bin/nix-disk-manager
+Icon=nix-disk-manager
+Terminal=false
+Type=Application
+Categories=GNOME;System;Filesystem;
+Keywords=Disk;
+StartupNotify=true
+StartupWMClass=org.glfos.nixdiskmanager

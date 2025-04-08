@@ -1,0 +1,28 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $NixDiskManagerDisks: Box {
+  spacing: 20;
+  orientation: vertical;
+  vexpand: true;
+  valign: center;
+  hexpand: false;
+  halign: center;
+  Box container {
+    orientation: horizontal;
+    spacing: 20;
+    halign: center;
+    valign: center;
+  }
+  Button save-btn {
+    hexpand: false;
+    halign: center;
+    clicked => $on_save();
+    Adw.ButtonContent {
+      icon-name: 'document-save-symbolic';
+      label: _("Save configuration");
+    }
+
+    styles ['suggested-action', 'pill']
+  }
+}

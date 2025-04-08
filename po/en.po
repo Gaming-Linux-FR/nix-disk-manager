@@ -1,0 +1,74 @@
+# English translations for nix-disk-manager package.
+# Copyright (C) 2025 THE nix-disk-manager'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nix-disk-manager package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nix-disk-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-08 16:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/ui/window.blp:22
+msgid "Please wait while your system is being rebuilt..."
+msgstr "Please wait while your system is being rebuilt..."
+
+#: data/ui/window.blp:27
+msgid ""
+"An error happened while rebuilding your system. Be aware and check your nix "
+"configuration !"
+msgstr ""
+"An error happened while rebuilding your system. Be aware and check your nix "
+"configuration !"
+
+#: data/ui/disk.blp:22
+msgid "Manage"
+msgstr "Manage"
+
+#: data/ui/disks.blp:23
+msgid "Save configuration"
+msgstr "Save configuration"
+
+#: data/ui/save_dialog.blp:5
+msgid ""
+"You made some configuration changes which need to be saved. Are you sure you "
+"want to exit the app ?"
+msgstr ""
+"You made some configuration changes which need to be saved. Are you sure you "
+"want to exit the app ?"
+
+#: data/ui/save_dialog.blp:7
+msgid "Stay"
+msgstr "Stay"
+
+#: data/ui/save_dialog.blp:8
+msgid "Exit"
+msgstr "Exit"
+
+#: data/ui/manage_disk_add_mount_row.blp:5
+msgid "Mount point path"
+msgstr "Mount point path"
+
+#: data/ui/manage_disk.blp:22
+msgid "Mount points"
+msgstr "Mount points"
+
+#: data/ui/welcome_dialog.blp:30
+msgid "Welcome on Nix Disk Manager."
+msgstr "Welcome on Nix Disk Manager."
+
+#: data/ui/welcome_dialog.blp:35
+msgid "Be ready to manage your disks like a pro !"
+msgstr "Be ready to manage your disks like a pro !"
+
+#: data/ui/welcome_dialog.blp:44
+msgid "Let's start !"
+msgstr "Let's start !"

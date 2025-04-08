@@ -1,0 +1,74 @@
+# French translations for nix-disk-manager package.
+# Copyright (C) 2025 THE nix-disk-manager'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nix-disk-manager package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nix-disk-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-08 16:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: data/ui/window.blp:22
+msgid "Please wait while your system is being rebuilt..."
+msgstr "Veuillez patienter le temps que votre système soit reconstruit..."
+
+#: data/ui/window.blp:27
+msgid ""
+"An error happened while rebuilding your system. Be aware and check your nix "
+"configuration !"
+msgstr ""
+"Une erreur est survenue lors de la reconstruction de votre système. Faites "
+"attention et vérifiez votre configuration Nix !"
+
+#: data/ui/disk.blp:22
+msgid "Manage"
+msgstr "Gérer"
+
+#: data/ui/disks.blp:23
+msgid "Save configuration"
+msgstr "Sauvegarder la configuration"
+
+#: data/ui/save_dialog.blp:5
+msgid ""
+"You made some configuration changes which need to be saved. Are you sure you "
+"want to exit the app ?"
+msgstr ""
+"Vous avez fait des changements de configuration qui nécessitent d'être "
+"sauvegardés. Êtes-vous sûr de vouloir quitter l'application ?"
+
+#: data/ui/save_dialog.blp:7
+msgid "Stay"
+msgstr "Rester"
+
+#: data/ui/save_dialog.blp:8
+msgid "Exit"
+msgstr "Quitter"
+
+#: data/ui/manage_disk_add_mount_row.blp:5
+msgid "Mount point path"
+msgstr "Chemin du point de montage"
+
+#: data/ui/manage_disk.blp:22
+msgid "Mount points"
+msgstr "Points de montage"
+
+#: data/ui/welcome_dialog.blp:30
+msgid "Welcome on Nix Disk Manager."
+msgstr "Bienvenue sur Nix Disk Manager."
+
+#: data/ui/welcome_dialog.blp:35
+msgid "Be ready to manage your disks like a pro !"
+msgstr "Prêt à gérer vos disques comme un pro ?"
+
+#: data/ui/welcome_dialog.blp:44
+msgid "Let's start !"
+msgstr "C'est parti !"

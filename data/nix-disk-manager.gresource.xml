@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gresources>
+  <gresource prefix="/org/glfos/NixDiskManager">
+    <file preprocess="xml-stripblanks">disk.ui</file>
+    <file preprocess="xml-stripblanks">disks.ui</file>
+    <file preprocess="xml-stripblanks">manage_disk_add_mount_row.ui</file>
+    <file preprocess="xml-stripblanks">manage_disk_mount_expander.ui</file>
+    <file preprocess="xml-stripblanks">manage_disk_mount_row.ui</file>
+    <file preprocess="xml-stripblanks">manage_disk.ui</file>
+    <file preprocess="xml-stripblanks">save_dialog.ui</file>
+    <file preprocess="xml-stripblanks">window.ui</file>
+    <file preprocess="xml-stripblanks">welcome_dialog.ui</file>
+  </gresource>
+</gresources>

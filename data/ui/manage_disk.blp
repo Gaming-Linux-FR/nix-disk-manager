@@ -1,0 +1,26 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $NixDiskManagerManageDiskDialog: Adw.Dialog {
+  can-close: true;
+  follows-content-size: false;
+  content-height: 500;
+  content-width: 800;
+
+  Box {
+    orientation: vertical;
+    Adw.HeaderBar {}
+    ScrolledWindow {
+      hexpand: true;
+      vexpand: true;
+
+      Adw.PreferencesGroup mount-points {
+        margin-top: 30;
+        margin-bottom: 30;
+        margin-start: 20;
+        margin-end: 20;
+        title: _("Mount points");
+      }
+    }
+  }
+}

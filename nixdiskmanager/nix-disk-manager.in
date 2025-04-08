@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import locale
+import gettext
+
+pkgdatadir = '@PKGDATA_DIR@'
+localedir = '@LOCALE_DIR@'
+
+gettext.install('nixdiskmanager', localedir)
+
+locale.bindtextdomain('nixdiskmanager', localedir)
+locale.textdomain('nixdiskmanager')
+
+
+if __name__ == '__main__':
+    import gi
+
+    gi.require_version('Gtk', '4.0')
+    gi.require_version('Adw', '1')
+
+    from gi.repository import Gio
+    resource = Gio.Resource.load(
+        os.path.join(pkgdatadir, 'nix-disk-manager.gresource'))
+    Gio.Resource._register(resource)
+
+    from nixdiskmanager import main
+    sys.exit(main.main())

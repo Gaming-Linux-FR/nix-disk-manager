@@ -1,0 +1,8 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $NixDiskManagerManageDiskAddMountRow: Adw.EntryRow {
+  title: _("Mount point path");
+  show-apply-button: true;
+  apply => $on_apply();
+}

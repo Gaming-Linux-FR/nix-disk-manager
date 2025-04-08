@@ -1,0 +1,52 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $NixDiskManagerWelcomeDialog: Adw.Dialog {
+  can-close: true;
+  follows-content-size: false;
+  content-height: 500;
+  content-width: 600;
+
+  Box {
+    orientation: vertical;
+    spacing: 20;
+    valign: center;
+    halign: center;
+
+    Box {
+      valign: center;
+      halign: center;
+      Picture logo {
+        height-request: 128;
+      }
+    }
+    
+    Box {
+      orientation: vertical;
+      valign: center;
+      spacing: 5;
+
+      Label {
+        label: _("Welcome on Nix Disk Manager.");
+        styles ['heading']
+      }
+
+      Label {
+        label: _("Be ready to manage your disks like a pro !");
+        styles ['heading']
+      }
+    }
+    
+    Button {
+      halign: center;
+      Adw.ButtonContent start-btn {
+        icon-name: 'go-next-symbolic';
+        label: _("Let\'s start !");
+      }
+
+      clicked => $start();
+
+      styles ['pill', 'suggested-action']
+    }
+  }
+}

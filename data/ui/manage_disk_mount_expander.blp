@@ -1,0 +1,13 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $NixDiskManagerManageDiskDialogMountExpander: Adw.ExpanderRow {
+  [suffix]
+  Button add-button {
+    clicked => $add_expand();
+    Adw.ButtonContent {
+        icon-name: 'list-add-symbolic';
+    }
+    styles ['accent-color', 'flat']
+  }
+}

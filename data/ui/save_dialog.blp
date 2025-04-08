@@ -1,0 +1,11 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $NixDiskManagerManageSaveDialog: Adw.AlertDialog {
+  body: _("You made some configuration changes which need to be saved. Are you sure you want to exit the app ?");
+  responses [
+    stay: _("Stay"),
+    exit: _("Exit") destructive
+  ]
+  response => $response();
+}

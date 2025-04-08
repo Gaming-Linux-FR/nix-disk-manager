@@ -1,0 +1,2 @@
+rootdir = '/org/glfos/NixDiskManager'
+pkgdatadir = '@PKGDATA_DIR@'

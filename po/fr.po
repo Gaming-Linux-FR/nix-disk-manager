@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nix-disk-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-08 16:33+0200\n"
+"POT-Creation-Date: 2025-04-09 12:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: data/ui/window.blp:22
+#: data/ui/window.blp:16
 msgid "Please wait while your system is being rebuilt..."
 msgstr "Veuillez patienter le temps que votre système soit reconstruit..."
 
-#: data/ui/window.blp:27
+#: data/ui/window.blp:21
 msgid ""
 "An error happened while rebuilding your system. Be aware and check your nix "
 "configuration !"
@@ -65,10 +65,16 @@ msgstr "Points de montage"
 msgid "Welcome on Nix Disk Manager."
 msgstr "Bienvenue sur Nix Disk Manager."
 
-#: data/ui/welcome_dialog.blp:35
-msgid "Be ready to manage your disks like a pro !"
-msgstr "Prêt à gérer vos disques comme un pro ?"
+#: data/ui/welcome_dialog.blp:36
+msgid ""
+"This tool is here to only help you mount your disks for the moment.\n"
+"More features will be available in the future !"
+msgstr "Cet outil est présent uniquement pour vous aider à monter vos disques pour le moment.\n"
+"Plus de fonctionnalités seront disponibles à l'avenir !"
 
-#: data/ui/welcome_dialog.blp:44
+#: data/ui/welcome_dialog.blp:45
 msgid "Let's start !"
 msgstr "C'est parti !"
+
+#~ msgid "Be ready to manage your disks like a pro !"
+#~ msgstr "Prêt à gérer vos disques comme un pro ?"

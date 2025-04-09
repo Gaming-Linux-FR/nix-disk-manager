@@ -39,6 +39,11 @@ def get_disks(nix_config = None) -> list[Disk]:
 
     for disk_line in content:
         disk = '/dev/' + disk_line.split(' ')[-1].strip()
+
+        # Exclude zram and CD/DVD
+        if disk.startswith('/dev/zram') or disk.startswith('/dev/sr'):
+            continue
+
         disk_size = int(subprocess.getoutput(f'lsblk -b --output SIZE -n -d {disk}'))
         
         if len(disks) > 0 and disk.startswith(disks[-1].path):

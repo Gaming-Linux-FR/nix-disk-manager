@@ -2,6 +2,7 @@ subdir('dialogs')
 subdir('utils')
 subdir('views')
 subdir('widgets')
+subdir('cli')
 
 moduledir = 'nixdiskmanager'
 

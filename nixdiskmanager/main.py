@@ -1,4 +1,4 @@
-import sys, subprocess
+import sys, subprocess, tempfile, re
 from gi.repository import GLib, Adw, Gio
 
 from concurrent.futures import ThreadPoolExecutor as Pool
@@ -42,16 +42,16 @@ class NixDiskManagerApp(Adw.Application):
             self.window.rebuild_error_banner.set_revealed(True)
 
     def save_config(self):
-        f = open(self.hardware_config_file, 'w')
-        f.write(get_nix_disks_config(self.hardware_config, self.disks))
-        f.close()
-
         self.window.rebuild_error_banner.set_revealed(False)
         self.window.rebuild_banner.set_revealed(True)
         self.disk_manager.prevent_changes()
 
+        conf_file = open('/tmp/nix-disk-manager.tmp', 'w')
+        conf_file.write(get_nix_disks_config(self.hardware_config, self.disks))
+
         pool = Pool(max_workers=1)
-        f = pool.submit(subprocess.call, self.nix_rebuild_cmd, shell=True)
+        print(f'pkexec nix-disk-manager-cli write {self.hardware_config_file} /tmp/nix-disk-manager.tmp "{repr(self.nix_rebuild_cmd)}"')
+        f = pool.submit(subprocess.call, f'pkexec nix-disk-manager-cli write /tmp/nix-disk-manager.tmp {self.hardware_config_file} "{self.nix_rebuild_cmd}"', shell=True)
         f.add_done_callback(self.rebuild_finished)
 
 def main():

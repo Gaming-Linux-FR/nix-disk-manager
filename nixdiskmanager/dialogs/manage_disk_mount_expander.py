@@ -21,9 +21,20 @@ class NixDiskManagerManageDiskDialogMountExpander(Adw.ExpanderRow):
         for mount_point in partition.mount_points:
             self.add_row(NixDiskManagerManageDiskMountRow(mount_point, self))
 
-    def add_mount_point(self, mount_point, apply_target):
+    def add_mount_point(self, mount_point, apply_target, create_dir):
+        dir_created = True
+
+        if create_dir:
+            code = os.system(f'pkexec nix-disk-manager-cli mkdir {mount_point}')
+
+            if code != 0:
+                dir_created = False
+
+        if not dir_created:
+            return
+        
         self.remove(apply_target)
-        os.makedirs(mount_point, exist_ok=True)
+
         self.add_row(NixDiskManagerManageDiskMountRow(mount_point, self))
         self.add_button.set_sensitive(True)
         self.partition.mount_points.append(mount_point)

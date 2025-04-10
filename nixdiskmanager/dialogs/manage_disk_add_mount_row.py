@@ -26,7 +26,9 @@ class NixDiskManagerManageDiskAddMountRow(Adw.EntryRow):
         else:
             mount_point = text
 
-        if os.path.exists(mount_point) and len(os.listdir(mount_point)) > 0:
+        dir_exists = os.path.exists(mount_point)
+
+        if (dir_exists and not os.path.isdir(mount_point)) or (dir_exists and len(os.listdir(mount_point)) > 0):
             return
 
-        self.parent.add_mount_point(mount_point, target)
+        self.parent.add_mount_point(mount_point, target, not dir_exists)

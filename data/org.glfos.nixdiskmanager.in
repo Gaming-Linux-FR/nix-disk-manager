@@ -15,9 +15,8 @@
             <allow_inactive>auth_admin</allow_inactive>
             <allow_active>auth_admin</allow_active>
         </defaults>
-        <annotate key="org.freedesktop.policykit.exec.path">@out@/bin/nix-disk-manager-cli</annotate>
+        <annotate key="org.freedesktop.policykit.exec.path">/run/current-system/sw/bin/nix-disk-manager</annotate>
         <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
-        <annotate key="org.freedesktop.policykit.imply">true</annotate>
 
     </action>
 

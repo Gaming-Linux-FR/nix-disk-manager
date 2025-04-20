@@ -59,10 +59,6 @@ python3Packages.buildPythonApplication rec {
     makeWrapperArgs+=("''${gappsWrapperArgs[@]}")
   '';
 
-  preConfigure = ''
-    substituteInPlace ./data/org.glfos.nixdiskmanager.in --subst-var-by out $out
-  ''; 
-
   meta = with lib; {
     description = "A simple GUI to manage disks on NixOS";
     license = licenses.gpl3Plus;

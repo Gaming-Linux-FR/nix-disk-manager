@@ -49,9 +49,10 @@ def get_disks(nix_config = None) -> list[Disk]:
         if len(disks) > 0 and disk.startswith(disks[-1].path):
             blkid = subprocess.getoutput(f'blkid {disk}')
 
-            partition_type = re.search('TYPE="([^"]+)"', blkid).group(1)
-            partition_label_match = re.search('LABEL="([^"]+)"', blkid)
+            partition_type_match = re.search('TYPE="([^"]+)"', blkid)
+            partition_type = None if partition_type_match == None else partition_type_match.group(1)
 
+            partition_label_match = re.search('LABEL="([^"]+)"', blkid)
             partition_label = None if partition_label_match == None else partition_label_match.group(1)
 
             if disk in partitions:

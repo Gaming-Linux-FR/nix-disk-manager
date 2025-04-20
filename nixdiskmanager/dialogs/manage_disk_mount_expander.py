@@ -15,7 +15,7 @@ class NixDiskManagerManageDiskDialogMountExpander(Adw.ExpanderRow):
         super().__init__(**kwargs)
 
         self.app = app
-        self.set_title((partition.label + ' - ' if partition.label != None else '') + partition.path + f' ({partition.type}, {parse_size(partition.size)})')
+        self.set_title((partition.label + ' - ' if partition.label != None else '') + partition.path + f'{f' ({partition.type}, {parse_size(partition.size)})' if partition.type != None else ''}')
         self.partition = partition
 
         for mount_point in partition.mount_points:

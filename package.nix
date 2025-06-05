@@ -25,7 +25,7 @@
 
 python3Packages.buildPythonApplication rec {
   pname = "nix-disk-manager";
-  version = "1.2.2";
+  version = "1.2.3";
 
   src = lib.cleanSource ./.;
 

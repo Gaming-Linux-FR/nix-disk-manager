@@ -23,6 +23,10 @@ class NixDiskManagerManageDiskDialogMountExpander(Adw.ExpanderRow):
 
     def add_mount_point(self, mount_point, apply_target):
         self.remove(apply_target)
+
+        if mount_point.ends_with('/'):
+            mount_point = mount_point[:-1]
+
         os.makedirs(mount_point, exist_ok=True)
         self.add_row(NixDiskManagerManageDiskMountRow(mount_point, self))
         self.add_button.set_sensitive(True)

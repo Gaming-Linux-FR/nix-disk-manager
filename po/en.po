@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nix-disk-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-09 12:46+0200\n"
+"POT-Creation-Date: 2025-06-09 16:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -74,6 +74,10 @@ msgstr ""
 #: data/ui/welcome_dialog.blp:45
 msgid "Let's start !"
 msgstr "Let's start !"
+
+#: nixdiskmanager/dialogs/manage_disk.py:21
+msgid "No mount points were detected"
+msgstr ""
 
 #~ msgid "Be ready to manage your disks like a pro !"
 #~ msgstr "Be ready to manage your disks like a pro !"

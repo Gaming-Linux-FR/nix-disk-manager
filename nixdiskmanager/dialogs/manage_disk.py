@@ -16,3 +16,8 @@ class NixDiskManagerManageDiskDialog(Adw.Dialog):
         for partition in disk.partitions:
             self.mount_points.add(NixDiskManagerManageDiskDialogMountExpander(partition, app))
 
+        if len(disk.partitions) == 0:
+            label = Gtk.Label()
+            label.set_text(_('No mount points were detected'))
+            self.mount_points.add(label)
+

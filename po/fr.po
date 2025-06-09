@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nix-disk-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-09 12:46+0200\n"
+"POT-Creation-Date: 2025-06-09 16:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -69,12 +69,18 @@ msgstr "Bienvenue sur Nix Disk Manager."
 msgid ""
 "This tool is here to only help you mount your disks for the moment.\n"
 "More features will be available in the future !"
-msgstr "Cet outil est présent uniquement pour vous aider à monter vos disques pour le moment.\n"
+msgstr ""
+"Cet outil est présent uniquement pour vous aider à monter vos disques pour "
+"le moment.\n"
 "Plus de fonctionnalités seront disponibles à l'avenir !"
 
 #: data/ui/welcome_dialog.blp:45
 msgid "Let's start !"
 msgstr "C'est parti !"
+
+#: nixdiskmanager/dialogs/manage_disk.py:21
+msgid "No mount points were detected"
+msgstr "Aucun point de montage détecté"
 
 #~ msgid "Be ready to manage your disks like a pro !"
 #~ msgstr "Prêt à gérer vos disques comme un pro ?"

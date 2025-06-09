@@ -61,7 +61,12 @@ def get_disks(nix_config = None) -> list[Disk]:
                 partitions[disk].size = disk_size
                 disks[-1].partitions.append(partitions[disk])
             else:
-                disks[-1].partitions.append(Partition(disk, f'/dev/disk/by-uuid/{re.search(' UUID="([^"]+)"', blkid).group(1)}', [], partition_type, disk_size, partition_label))
+                parsed_uuid_groups = re.search(' UUID="([^"]+)"', blkid)
+
+                # We don't add partitions without UUID since there would be "impossible" to mount (hey Microsoft).
+                if parsed_uuid_groups != None:
+                    parsed_uuid = parsed_uuid_groups.group(1)
+                    disks[-1].partitions.append(Partition(disk, f'/dev/disk/by-uuid/', [], partition_type, disk_size, partition_label))
             
             continue
         

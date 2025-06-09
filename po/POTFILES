@@ -7,3 +7,4 @@ data/ui/manage_disk_mount_expander.blp
 data/ui/manage_disk_mount_row.blp
 data/ui/manage_disk.blp
 data/ui/welcome_dialog.blp
+nixdiskmanager/dialogs/manage_disk.py

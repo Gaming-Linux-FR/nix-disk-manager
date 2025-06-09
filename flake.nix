@@ -14,7 +14,7 @@
         with pkgs;
         {
           packages = rec {
-            nix-disk-manager = pkgs.callPackage ./package.nix {nix-disk-manager = nix-disk-manager.packages.${system}.default; };
+            nix-disk-manager = pkgs.callPackage ./package.nix {};
             default = nix-disk-manager;
           };
           devShells.default = mkShell {
